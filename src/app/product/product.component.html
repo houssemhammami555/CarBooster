@@ -1,55 +1,50 @@
 <div class="row"> 
-  <div class="table-responsive text-nowrap col-lg-8">
-      <!--Table-->
-      <table class="table">
-  
-        <!--Table head-->
-        <thead class="thead-light">
-          <tr>
-            <th>Ref</th>
-            <th>Prodcut Name</th>
-            <th>Details</th>
-            
-             <th>Quantity in Stock</th>
-             <th>Price</th>
-            
-            <th><button class="btn btn-outline-primary" (click)="operation = 'add' ">ADD</button></th>
-          </tr>
-        </thead>
-        <!--Table head-->
-  
-        <!--Table body-->
-        <tbody>
+  <div class="col-lg-8">
+     <div class="row">
+      <div class="ui link cards col-lg-4"  *ngFor="let prod of products" >
+              <div class="card">
+             
+                  <div class="content">
+                      <div class="header">
+                         Ref : {{prod.ref}}
+                        </div>
+                        <div class="title">
+                         Product Name:  {{prod.pname}}
+                          </div>
+                        <div class="meta">
+                        Quantity in stock: {{ prod.quantity}}
+                        </div>
+                        <div class="meta">
+                         Price: {{ prod.price}} DT
+                          </div>
+                        <div class="description">
+                          {{prod.descrip}}
+                        </div>
+                  </div>
+                  <div class="extra content">
+                      <button class="btn btn-outline-primary"
+                 (click)="operation = 'edit'; selectedProd = prod;">Edit
+              <i class="edit outline icon"></i>
+                      </button>
+    
+                        
+                
+                      <button class="btn btn-outline-danger" (click)="operation= 'remove'">Delete
+                         <i class="remove circle icon"></i>
+                      </button>
+                       
+              
+                   
+                  </div>
+                </div>
          
+          
+         
+            
+            
 
-                              <tr  *ngFor="let prod of products">
-                                      <td> {{prod.ref}} </td>
-                                      <td> {{prod.pname}} </td>
-                                     <td > {{prod.descrip}} </td>
-                                      
-                                      <td> {{prod.quantity}} </td>
-                                      <td> {{prod.price}} DT </td>
-                                     
-                                      <td><button class="btn btn-outline-primary" (click)="operation = 'edit'; selectedProd = prod;">Edit</button>
-                                        <button class="btn btn-outline-danger" (click)="operation= 'remove'">Delete</button>
-                                      </td>
-  
-                                    </tr>  
-  
-  
-  
-  
-        
-        </tbody>
-        <!--Table body-->
-  
-  
-      </table>
-
-     
-
-      
-      <!--Table-->
+          </div>
+        </div>
     </div>
   <div class="col-lg-3 offset-lg-1">
   <div class="card">
@@ -60,10 +55,10 @@
             operation == 'remove' ? 'Delete Prodcut':'' }}
       </div>
       <div class="card-body">
-    
-             <form [formGroup]="ProductForm">
+        <div *ngIf="operation == 'add' || operation == 'edit'">
+           <form [formGroup]="ProductForm">
               <div class="form-group">
-                <label> Product Name </label>
+                <label> Reef Name </label>
                 <input type="text" name="ref" class="form-control" formControlName="ref"  [(ngModel)]="selectedProd.ref" >
               </div>
               <div class="alert alert-danger" *ngIf="ProductForm.controls['ref'].invalid &&
@@ -95,7 +90,22 @@
               {{operation == 'add' ? 'Add Prodcut' : operation == 'edit' ? 'Edit Prodcut': ''}}
             </button>
           </form>
+        </div>
     
+            
+    
+
+          <div *ngIf="operation == 'remove'">
+              <p class="card-title">
+                  Product ref : {{selectedProd.ref}}
+                
+                </p>
+                <p>
+                  You want to delete this product ?
+                </p>
+                  <button class="btn btn-success" (click)="deleteProduct()"> Confirme </button>
+                
+          </div>
       </div>
       <div class="card-footer">
          
@@ -108,16 +118,9 @@
   </div>
   </div>
   <div class="row">
-     <ng-container *ngFor="let prod of products">
-        <div class="card" style="width: 18rem;">
-           
-            <div class="card-body">
-              <h5 class="card-title"> {{prod.ref}} </h5>
-              <h6 class="card-subtitle mb-2 text-muted"> {{prod.pname}} </h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-     </ng-container>
-     
+
+
+
+        
+    
   </div>

@@ -44,6 +44,7 @@ export class ProductComponent implements OnInit {
     const prod = this.ProductForm.value;
     this.ProductService.addProduct(prod).subscribe(
       res=>{
+        this.initProduct();
         this.loadProduct();
       }
       
@@ -51,13 +52,29 @@ export class ProductComponent implements OnInit {
     console.log(prod);
   }
   updateProduct(){
-    this.ProductService.updateProdcut({}).subscribe(
+    this.ProductService.updateProdcut(this.selectedProd).subscribe(
       res => {
+        this.initProduct();
         this.loadProduct();
       }
     );
   }
   initProduct(){
     this.selectedProd= new Product();
+    this.creatForm()
   }
+  deleteProduct(){
+
+      this.ProductService.deleteProduct(this.selectedProd.ref).subscribe(
+        res =>{
+          this.selectedProd = new Product();
+          this.loadProduct();
+        }
+      )
+  }
+
+
+
+
+
 }

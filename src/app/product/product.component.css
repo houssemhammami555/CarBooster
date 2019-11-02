@@ -1,0 +1,6 @@
+.DispoTrue:hover{
+    background-color: rgba(14, 221, 7, 0.699);
+}
+.DispoFalse:hover{
+    background-color: rgba(255, 0, 0, 0.712);
+}
