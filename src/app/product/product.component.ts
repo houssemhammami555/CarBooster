@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../shared/product';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProductService } from './product.service';
+import { ActivatedRoute } from '@angular/router';
+declare var $:any;
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -13,13 +15,14 @@ export class ProductComponent implements OnInit {
   ProductForm: FormGroup;
   operation:String='add';
   selectedProd: Product;
-  constructor(private ProductService:ProductService , private fb: FormBuilder) {
+ // dispo:Boolean = false;
+  constructor(private ProductService:ProductService , private fb: FormBuilder, private route:ActivatedRoute) {
   this.creatForm();
    }
 
   ngOnInit() {
      this.initProduct();
-     this.loadProduct();
+    this.products = this.route.snapshot.data.products;
   }
   creatForm(){
     this.ProductForm = this.fb.group({
@@ -65,7 +68,7 @@ export class ProductComponent implements OnInit {
   }
   deleteProduct(){
 
-      this.ProductService.deleteProduct(this.selectedProd.ref).subscribe(
+      this.ProductService.deleteProduct(this.selectedProd.id).subscribe(
         res =>{
           this.selectedProd = new Product();
           this.loadProduct();
@@ -73,8 +76,8 @@ export class ProductComponent implements OnInit {
       )
   }
 
-
-
-
+  popUp(){
+   $('.ui.modal').modal('show');
+}
 
 }

@@ -22,7 +22,7 @@ export class ProductService{
     updateProdcut(prod:Product):Observable<any>{
         return this.http.put(API_URLS.PRODUCTS_URLS, prod);
     }
-    deleteProduct(id:String):Observable<any>{
+    deleteProduct(id:Number):Observable<any>{
         return this.http.delete(API_URLS.PRODUCTS_URLS+`/${id}`);
     }
 }

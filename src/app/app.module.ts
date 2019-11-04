@@ -12,6 +12,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './product/product.service';
+import { CarComponent } from './car/car.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ProductService } from './product/product.service';
     DashboardComponent,
     ContentComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    CarComponent
   ],
   imports: [
     BrowserModule,
