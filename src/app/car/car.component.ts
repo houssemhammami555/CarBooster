@@ -1,4 +1,7 @@
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Car } from '../shared/car';
+import { CarService } from './car.service';
 
 @Component({
   selector: 'app-car',
@@ -7,9 +10,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarComponent implements OnInit {
 
-  constructor() { }
+   cars:Car[];
+   CarForm: FormGroup;
+   operation:String='add';
+   selectedCar:Car; 
+  constructor(private CarService:CarService,private fb:FormBuilder) {
+    this.CreatForm();
+   }
 
   ngOnInit() {
+    this.loadCars();
   }
+
+  CreatForm(){
+    this.CarForm = this.fb.group({
+      mat:['',Validators.required],
+      userCin:'',
+      state:'',
+      price:'',
+      model:'',
+      details:''
+
+    });
+  }
+  loadCars(){
+    this.CarService.getCars().subscribe(
+      data => {this.cars = data},
+      error =>{console.error("cant load cars from server !")},
+      ()=>{console.log(this.cars)}
+    );
+  }
+
+
+
 
 }

@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CarComponent } from './car/car.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
     products:ProductResolver
   
   }},
+  {path:'car', component:CarComponent},
   {path :'', redirectTo:'/home', pathMatch:'full'}
 ];
 

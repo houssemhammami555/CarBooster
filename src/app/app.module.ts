@@ -13,6 +13,7 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './product/product.service';
 import { CarComponent } from './car/car.component';
+import { CarService } from './car/car.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CarComponent } from './car/car.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ ProductService ],
+  providers: [ ProductService,
+      CarService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,88 @@
-<p>
-  car works!
-</p>
+<div class="col-lg-8">
+  <div class="row">
+   <div class="ui link cards col-lg-4"  *ngFor="let car of cars" >
+    <ng-container *ngIf="car.state == true; else elseTemplate">
+      <div class="card"  data-tooltip="fixed !" data-position="top center" >
+          
+               <div class="content">
+                   <div class="header">
+                      Ref : {{car.mat}}
+                     </div>
+                     <div class="title">
+                      Car Model:  {{car.model}}
+                       </div>
+                     <div class="meta">
+                    USER CIN: {{ car.userCin}}
+                     </div>
+                     <div class="meta">
+                      Price: {{ car.price}} DT
+                       </div>
+                     <div class="description">
+                       {{car.descrip}}
+                     </div>
+               </div>
+               <div class="extra content">
+                   <button class="btn btn-outline-primary"
+              (click)="operation = 'edit'; selectedCar = car;">Edit
+           <i class="edit outline icon"></i>
+                   </button>
+ 
+                     
+             
+                   <button class="btn btn-outline-danger" (click)="operation= 'remove'; selectedCar = car;">Delete
+                      <i class="remove circle icon"></i>
+                   </button>
+                    
+           
+                
+               </div>
+             </div>
+    </ng-container>
+    <ng-template #elseTemplate>
+       <div class="card"  data-tooltip="Out of stock !" data-position="top center" >
+          
+        <div class="content">
+          <div class="header">
+             Ref : {{car.mat}}
+            </div>
+            <div class="title">
+             Car Model:  {{car.model}}
+              </div>
+            <div class="meta">
+           USER CIN: {{ car.userCin}}
+            </div>
+            <div class="meta">
+             Price: {{ car.price}} DT
+              </div>
+            <div class="description">
+              {{car.details}}
+            </div>
+      </div>
+           <div class="extra content">
+               <button class="btn btn-outline-primary"
+          (click)="operation = 'edit'; selectedCar = car;">Edit
+       <i class="edit outline icon"></i>
+               </button>
+
+                 
+         
+               <button class="btn btn-outline-danger" (click)="operation= 'remove'; selectedCar = car;">Delete
+                  <i class="remove circle icon"></i>
+               </button>
+                
+       
+            
+           </div>
+         </div>
+    </ng-template>
+    
+           
+       
+       
+      
+         
+         
+
+       </div>
+     </div>
+ </div>
