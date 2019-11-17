@@ -16,7 +16,8 @@ export class ProductComponent implements OnInit {
   operation:String='add';
   selectedProd: Product;
  // dispo:Boolean = false;
-  constructor(private ProductService:ProductService , private fb: FormBuilder, private route:ActivatedRoute) {
+  constructor(private ProductService:ProductService , 
+    private fb: FormBuilder, private route:ActivatedRoute) {
   this.creatForm();
    }
 
@@ -27,7 +28,7 @@ export class ProductComponent implements OnInit {
   creatForm(){
     this.ProductForm = this.fb.group({
       ref:['',Validators.required],
-      pname:'',
+      pname:['',Validators.required],
       descrip:'',
       quantity:'',
       price:''
