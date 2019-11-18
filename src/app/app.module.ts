@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
@@ -16,6 +15,8 @@ import { CarComponent } from './car/car.component';
 import { CarService } from './car/car.service';
 import { LoginComponent } from './login/login.component';
 import { AppService } from './app.service';
+import { ChartModule } from "angular2-chartjs";
+import { MyChartComponent } from './my-chart/my-chart.component'; 
 
 @NgModule({
   declarations: [
@@ -27,14 +28,16 @@ import { AppService } from './app.service';
     NavbarComponent,
     SidebarComponent,
     CarComponent,
-    LoginComponent
+    LoginComponent,
+    MyChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartModule
   ],
   providers: [ ProductService,
       CarService, AppService ],
