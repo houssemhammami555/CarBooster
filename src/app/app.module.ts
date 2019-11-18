@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './product/product.service';
 import { CarComponent } from './car/car.component';
 import { CarService } from './car/car.service';
+import { LoginComponent } from './login/login.component';
+import { AppService } from './app.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { CarService } from './car/car.service';
     ContentComponent,
     NavbarComponent,
     SidebarComponent,
-    CarComponent
+    CarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,7 @@ import { CarService } from './car/car.service';
     HttpClientModule
   ],
   providers: [ ProductService,
-      CarService ],
+      CarService, AppService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

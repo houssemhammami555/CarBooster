@@ -5,17 +5,25 @@ import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CarComponent } from './car/car.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
-  {path:'home', component:HomeComponent},
-  { path:'dashboard', component: DashboardComponent },
+  {path:'home', component:HomeComponent,
+children: [
   {path: 'product', component:ProductComponent,
   resolve:{
     products:ProductResolver
   
-  }},
-  {path:'car', component:CarComponent},
+  },
+  outlet:'contentOutlet'
+},
+{path:'car', component:CarComponent,outlet:'contentOutlet'},
+{ path:'dashboard', component: DashboardComponent ,
+outlet:'contentOutlet'}
+]},
+  
+  {path:'login' , component:LoginComponent},
   {path :'', redirectTo:'/home', pathMatch:'full'}
 ];
 

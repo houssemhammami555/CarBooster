@@ -9,10 +9,10 @@
           <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active"  >Home</a>
       </li>
       <li class="nav-item">
-              <a  class="nav-link" [routerLink]="['/car']" routerLinkActive="router-link-active" >My Car</a>
+              <a  class="nav-link" [routerLink]="[{outlets:{contentOutlet:'car'}}]" routerLinkActive="router-link-active" >My Car</a>
           </li>
           <li class="nav-item">
-                  <a  class="nav-link"  [routerLink]="['/product']" routerLinkActive="router-link-active"  >Product</a>
+                  <a  class="nav-link"  [routerLink]="[{outlets:{contentOutlet:'product'}}]" routerLinkActive="router-link-active"  >Product</a>
               </li>
   </ul>
 

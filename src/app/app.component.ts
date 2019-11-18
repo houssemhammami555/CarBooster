@@ -7,9 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CarBooster';
-  showHideSideBar:Boolean=false;
-  onshowSideBarChange(showHideSideBar){
-    this.showHideSideBar=showHideSideBar;
-
-  }
+  
 }

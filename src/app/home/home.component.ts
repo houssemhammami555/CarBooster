@@ -8,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
+  showHideSideBar:Boolean=false;
+  onshowSideBarChange(showHideSideBar){
+    this.showHideSideBar=showHideSideBar;
 
+  }
   ngOnInit() {
   }
 
