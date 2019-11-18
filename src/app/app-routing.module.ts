@@ -5,7 +5,10 @@ import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CarComponent } from './car/car.component';
+<<<<<<< HEAD
 import { LoginComponent } from './login/login.component';
+=======
+>>>>>>> 932b9c31ec664d6e5ac1c2fe52939b446d155b24
 
 
 const routes: Routes = [
@@ -15,6 +18,7 @@ children: [
   resolve:{
     products:ProductResolver
   
+<<<<<<< HEAD
   },
   outlet:'contentOutlet'
 },
@@ -24,6 +28,10 @@ outlet:'contentOutlet'}
 ]},
   
   {path:'login' , component:LoginComponent},
+=======
+  }},
+  {path:'car', component:CarComponent},
+>>>>>>> 932b9c31ec664d6e5ac1c2fe52939b446d155b24
   {path :'', redirectTo:'/home', pathMatch:'full'}
 ];
 

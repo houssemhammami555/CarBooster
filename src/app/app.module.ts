@@ -14,8 +14,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './product/product.service';
 import { CarComponent } from './car/car.component';
 import { CarService } from './car/car.service';
+<<<<<<< HEAD
 import { LoginComponent } from './login/login.component';
 import { AppService } from './app.service';
+=======
+>>>>>>> 932b9c31ec664d6e5ac1c2fe52939b446d155b24
 
 @NgModule({
   declarations: [
@@ -37,7 +40,11 @@ import { AppService } from './app.service';
     HttpClientModule
   ],
   providers: [ ProductService,
+<<<<<<< HEAD
       CarService, AppService ],
+=======
+      CarService ],
+>>>>>>> 932b9c31ec664d6e5ac1c2fe52939b446d155b24
   bootstrap: [AppComponent]
 })
 export class AppModule { }
