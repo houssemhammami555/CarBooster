@@ -11,6 +11,7 @@ declare var $:any;
 })
 export class ProductComponent implements OnInit {
 
+  list:string[] =["cles","oil","moteur"];
   products:Product[];
   ProductForm: FormGroup;
   operation:String='add';

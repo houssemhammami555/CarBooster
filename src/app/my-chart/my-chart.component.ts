@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MyChartComponent implements OnInit {
 
   constructor() { }
+
   type = 'line';
 @Input()
 data = {
@@ -15,11 +16,9 @@ data = {
   datasets: [
     {
       label: "My First dataset",
-      data: [65, 59, 80, 81, 56, 55, 40],
+      data: [65, 59, 80, ],
       backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)']
+        'red']
     }
   ]
 };
@@ -27,7 +26,9 @@ options = {
   responsive: true,
   maintainAspectRatio: false
 };
+ 
   ngOnInit() {
+  
   }
 
 }

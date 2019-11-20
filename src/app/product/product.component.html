@@ -99,8 +99,13 @@
         <div *ngIf="operation == 'add' || operation == 'edit'">
            <form [formGroup]="ProductForm">
               <div class="form-group">
-                <label> Reef Name </label>
-                <input type="text" name="ref" class="form-control" formControlName="ref"  [(ngModel)]="selectedProd.ref" >
+              
+        
+                <label> Category Name </label>
+                        <select [(ngModel)]="selectedProd.ref" name="ref" class="form-control" formControlName="ref">
+                  <option *ngFor="let item of list" [value]="item">{{item}}</option>
+                </select>
+              
               </div>
               <div class="alert alert-danger" *ngIf="ProductForm.controls['ref'].invalid &&
                (ProductForm.controls['ref'].touched || ProductForm.controls['ref'].dirty)" > 

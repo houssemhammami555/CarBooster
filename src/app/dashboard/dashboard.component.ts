@@ -9,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-    private dataProdParRef ={
+    private dataProdParPrice ={
       labels:   [],
       datasets:[]
     };  
-     private dataLinearGraphProducts ={
+     private dataProdParQuant ={
       labels:   [],
       datasets:[]
     };
@@ -33,14 +33,15 @@ export class DashboardComponent implements OnInit {
    this.prodService.getProducts().subscribe(list=> list.forEach(product =>{
     console.log(product.ref);
     console.log(product.price);
-    this.dataProdParRef.labels.push(product.ref);
-    datasetsPrice.data.push(product.price);
+    this.dataProdParPrice.labels.push(product.pname);
+    this.dataProdParQuant.labels.push(product.pname);
+  datasetsPrice.data.push(product.price);
     console.log(product.price);
     datasetsStock.data.push(product.quantity);
    }));
    
-   this.dataProdParRef.datasets.push(datasetsStock);
-   this.dataProdParRef.datasets.push(datasetsPrice);
+   this.dataProdParQuant.datasets.push(datasetsStock);
+   this.dataProdParPrice.datasets.push(datasetsPrice);
 
   
   }
