@@ -1,3 +1,5 @@
+import { CategoryService } from './../settings/category.service';
+import { Category } from './../shared/category';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../shared/product';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -16,8 +18,9 @@ export class ProductComponent implements OnInit {
   ProductForm: FormGroup;
   operation:String='add';
   selectedProd: Product;
+  categoryz:Category [];
  // dispo:Boolean = false;
-  constructor(private ProductService:ProductService , 
+  constructor(private ProductService:ProductService , private CatService:CategoryService , 
     private fb: FormBuilder, private route:ActivatedRoute) {
   this.creatForm();
    }
@@ -25,6 +28,12 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
      this.initProduct();
     this.products = this.route.snapshot.data.products;
+    this.CatService.getCategorys().subscribe(
+      data => { this.categoryz = data },
+      error => {console.error("Cant load product from the server!")},
+     ()=> {console.log(this.categoryz) }
+    );
+
   }
   creatForm(){
     this.ProductForm = this.fb.group({
@@ -32,7 +41,8 @@ export class ProductComponent implements OnInit {
       pname:['',Validators.required],
       descrip:'',
       quantity:'',
-      price:''
+      price:'',
+      category:''
 
     });
   }

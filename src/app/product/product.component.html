@@ -107,6 +107,14 @@
                 </select>
               
               </div>
+              <div class="form-group">
+
+                <label> Category Name </label>
+                        <select [(ngModel)]="selectedProd.category" name="category" class="form-control" formControlName="category">
+                  <option class="form-control" *ngFor="let cat of categoryz" [value]="cat">{{cat.name}}</option>
+                </select>
+
+              </div>
               <div class="alert alert-danger" *ngIf="ProductForm.controls['ref'].invalid &&
                (ProductForm.controls['ref'].touched || ProductForm.controls['ref'].dirty)" > 
               You must enter the category of the product !

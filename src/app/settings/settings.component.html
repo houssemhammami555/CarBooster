@@ -1,0 +1,22 @@
+<p *ngFor="let cate of Category">
+  {{ cate.name }}
+
+
+</p>
+<div>
+<form [formGroup]="CategoryForm" >
+
+    <div class="form-group">
+      <label> Category Name </label>
+      <input type="text" name="name" class="form-control" formControlName="name" >
+    </div>
+    <div class="alert alert-danger" *ngIf="CategoryForm.controls['name'].invalid &&
+   (CategoryForm.controls['name'].touched || CategoryForm.controls['name'].dirty)" > 
+  You must enter the name of the product !
+  </div>
+  <button class="btn btn-success" [disabled]="CategoryForm.prestine || CategoryForm.invalid"
+              (click)="addCat() ">
+                   Add Category
+            </button>
+</form>
+</div>
