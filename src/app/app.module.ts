@@ -18,7 +18,8 @@ import { LoginComponent } from './login/login.component';
 import { AppService } from './app.service';
 import { ChartModule } from "angular2-chartjs";
 import { MyChartComponent } from './my-chart/my-chart.component';
-import { SettingsComponent } from './settings/settings.component'; 
+import { SettingsComponent } from './settings/settings.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component'; 
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SettingsComponent } from './settings/settings.component';
     CarComponent,
     LoginComponent,
     MyChartComponent,
-    SettingsComponent
+    SettingsComponent,
+    WelcomePageComponent
   ],
   imports: [
     BrowserModule,
