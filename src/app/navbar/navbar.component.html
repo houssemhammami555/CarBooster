@@ -1,22 +1,96 @@
-<div>
-  <span data-toggle="collapse" (click)="afficherSideBar()"><i class="fa fa-bars" aria-hidden="true"></i> </span>
-  <hr>
-<nav class="navbar navbar-expand-sm bg-light">
-
-  <i class="glyphicon glyphicon-search"></i>
-  <ul class="navbar-nav">
-      <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active"  >Home</a>
-      </li>
-      <li class="nav-item">
-              <a  class="nav-link" [routerLink]="[{outlets:{contentOutlet:'car'}}]" routerLinkActive="router-link-active" >My Car</a>
-          </li>
-          <li class="nav-item">
-                  <a  class="nav-link"  [routerLink]="[{outlets:{contentOutlet:'product'}}]" routerLinkActive="router-link-active"  >Product</a>
+<header class="header header-vone">
+  <div class="container">
+      <div class="logo pull-left">
+          <a href="index.html"><img src="http://world5.commonsupport.com/html/total-car/images/logo.png" alt="Awesome Image"/></a>
+      </div>
+      <div class="top-infos pull-right">
+          <ul class="list-inline">
+              <li>
+                  <div class="icon-box">
+                      <i class="fa fa-phone"></i>
+                  </div>
+                  <div class="text-box">
+                      <h4>Call us now</h4>
+                      <p>+61 3 8376 6284</p>
+                  </div>
               </li>
-  </ul>
+              <li>
+                  <div class="icon-box">
+                      <i class="fa fa-clock-o"></i>
+                  </div>
+                  <div class="text-box">
+                      <h4>Opening Hours </h4>
+                      <p>Mon- Sat : 6 am - 8 pm</p>
+                  </div>
+              </li>
+          </ul>
+      </div>
+  </div>
+</header>
 
-</nav>
 
 
+<div class="mainmenu-wrapper stricky menu-dark">
+  <div class="container">
+      <nav class="mainmenu-area pull-left">
+          <div class="navbar" role="navigation">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  
+              </div>
+                <!-- Main menu aea -->
+              <div class="navbar-collapse collapse text-center">  
+                  <ul>
+                      <li >
+                          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active"  >Home</a>
+                         
+                      </li>
+                      <li class="dropdown">
+                          <a href="about.html">About</a>
+                          <ul class="submenu">
+                              <li><a href="team-member.html">Team</a> </li>
+                          </ul>
+                      </li>
+                      <li class="dropdown">
+                          <a href="service-1.html">Services</a>
+                          <ul class="submenu">
+                              <li><a href="service-1.html">service one</a></li>
+                              <li><a href="service-2.html">service two</a></li>
+                              <li><a href="conditioning.html">Air Conditioning</a></li>
+                       
+                          </ul>
+                      </li>
+                      <li class="dropdown">
+                          <a href="gallery-masonary.html">Gallery</a>
+                          <ul class="submenu">
+                              <li><a href="gallery-masonary.html">gallery Masonary</a></li>
+                              <li><a href="gallery-3-col.html">gallery 3 Col</a></li>
+                      
+                          </ul>
+                      </li>
+                      
+                      
+                      <li>
+                          <a  class="nav-link" [routerLink]="[{outlets:{contentOutlet:'car'}}]" routerLinkActive="router-link-active" >My Car</a>
+                      </li>
+                      <li>   <a  class="nav-link"  [routerLink]="[{outlets:{contentOutlet:'product'}}]" routerLinkActive="router-link-active"  >Product</a></li>
+                  </ul> 
+              </div> 
+          </div>
+      </nav> <!-- /.mainmenu-area -->
+      <div class="social pull-right">
+          <ul class="list-inline">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+      </div>
+  </div>
 </div>
+<!-- Main Slider -->

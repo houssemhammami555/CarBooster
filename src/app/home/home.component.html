@@ -1,149 +1,11 @@
-<div class="container-fluid">
-  <div class="row body">
-      <div class="col-lg-2" *ngIf="showHideSideBar">
-          <app-sidebar></app-sidebar>
-      </div>
-  
-  
-  <div class="class col-lg-10">
-      
-   <app-navbar [showSideBar]="showHideSideBar"
-   (showSideBarChange)="onshowSideBarChange($event)"
-   ></app-navbar>
-  <app-content></app-content>   
-  </div>
-  </div>
-  </div>
 
   
-<div class="page-wrapper">
+
  	
 
-    <header class="header header-vone">
-        <div class="container">
-            <div class="logo pull-left">
-                <a href="index.html"><img src="http://world5.commonsupport.com/html/total-car/images/logo.png" alt="Awesome Image"/></a>
-            </div>
-            <div class="top-infos pull-right">
-                <ul class="list-inline">
-                    <li>
-                        <div class="icon-box">
-                            <i class="fa fa-phone"></i>
-                        </div>
-                        <div class="text-box">
-                            <h4>Call us now</h4>
-                            <p>+61 3 8376 6284</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="icon-box">
-                            <i class="fa fa-clock-o"></i>
-                        </div>
-                        <div class="text-box">
-                            <h4>Opening Hours </h4>
-                            <p>Mon- Sat : 6 am - 8 pm</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header>
-    <div class="mainmenu-wrapper stricky menu-dark">
-        <div class="container">
-            <nav class="mainmenu-area pull-left">
-                <div class="navbar" role="navigation">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        
-                    </div>
-                      <!-- Main menu aea -->
-                    <div class="navbar-collapse collapse text-center">  
-                        <ul>
-                            <li class="current dropdown">
-                                <a href="index.html">Home</a>
-                                <ul class="submenu">
-                                    <li>
-                                        <a href="index.html">Homepage One</a>
-                                    </li>
-                                    <li><a href="index-2.html">Homepage Two</a></li>
-                                    <li><a href="index-3.html">Homepage Three</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="about.html">About</a>
-                                <ul class="submenu">
-                                    <li><a href="team-member.html">Team</a> </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="service-1.html">Services</a>
-                                <ul class="submenu">
-                                    <li><a href="service-1.html">service one</a></li>
-                                    <li><a href="service-2.html">service two</a></li>
-                                    <li><a href="conditioning.html">Air Conditioning</a></li>
-                                    <li><a href="battery.html">Battery Service</a></li>
-                                    <li><a href="brakes.html">Brakes Service</a></li>
-                                    <li><a href="exhaust.html">Exhaust Systems</a></li>
-                                    <li><a href="emissions.html">Emissions</a></li>
-                                    <li><a href="oil.html">Oil Change</a></li>
-                                    <li><a href="preventative.html">Preventative Maintenance</a></li>
-                                    <li><a href="tirePressure.html">Tire Pressure</a></li>
-                                    <li><a href="tireService.html">Tire Service</a></li>
-                                    <li><a href="transmission.html">Transmission Service</a></li>
-                                    <li><a href="wheel.html">Wheel Alignment</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="gallery-masonary.html">Gallery</a>
-                                <ul class="submenu">
-                                    <li><a href="gallery-masonary.html">gallery Masonary</a></li>
-                                    <li><a href="gallery-3-col.html">gallery 3 Col</a></li>
-                                    <li><a href="gallery-4-col.html">gallery 4 Col</a></li>
-                                    <li><a href="gallery-4-col-full.html">gallery 4 col full</a></li>
-                                    <li><a href="gallery-3-col-full.html">gallery 3 col full</a></li>
-                                </ul>
-                            </li>
-                            
-                            <li class="dropdown">
-                                <a href="#">Pages</a>
-                                <ul class="submenu">
-                                    <li><a href="pricing.html">Pricing</a></li>
-                                    <li><a href="warranty.html">Warranty</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="blog.html">Blog</a>
-                                <ul class="submenu">
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-left.html">Blog Left</a></li>
-                                    <li><a href="blog-right.html">Blog Right</a></li>
-                                    <li><a href="blog-2-col.html">Blog Two Col</a></li>
-                                    <li><a href="blog-details.html">blog details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contactus.html">Contact Us</a></li>
-                        </ul> 
-                    </div> 
-                </div>
-            </nav> <!-- /.mainmenu-area -->
-            <div class="social pull-right">
-                <ul class="list-inline">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- Main Slider -->
-    
-  
+   
+    <app-navbar></app-navbar>
+  <app-content></app-content>  
 
 
 
@@ -760,88 +622,12 @@
                 </div>
             </div>
         </div>
-        <div class="google-map" id="contact-google-map" data-map-lat="-37.817562" data-map-lng="144.956365" data-icon-path="http://world5.commonsupport.com/html/total-car/images/icons/map-marker.png" data-map-title="Awesome Place" data-map-zoom="16"></div>
+      
     </section>
     <!-- footer section -->
-    <section class="footer-section">
-        <div class="overly">
-            <div class="auto-container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="footer-widget">
-                            <div class="column-title">
-                                <h2>about us</h2>
-                            </div>
-                            <div class="content">
-                                <p>Praesent massa felis, mattis et tempor non, condimentum vel lectus. in turpis leo. vestibulum a sagittis iaculis convallis sit amet purus. sed lacinia elit in dui imperdiet pottitor</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="footer-widget">
-                            <div class="column-title">
-                                <h2>car service</h2>
-                            </div>
-                            <div class="content">
-                                <ul>
-                                    <li><a href="#">Audi service</a></li>
-                                    <li><a href="#">BMW servicve</a></li>
-                                    <li><a href="#">Citroen service</a></li>
-                                    <li><a href="#">Daewoo service</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="footer-widget">
-                            <div class="column-title">
-                                <h2>useful information</h2>
-                            </div>
-                            <div class="content">
-                                <ul>
-                                    <li><a href="#">MOT</a></li>
-                                    <li><a href="#">About us</a></li>
-                                    <li><a href="#">How it works</a></li>
-                                    <li><a href="#">FAQ's</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="footer-widget">
-                            <div class="column-title">
-                                <h2>useful searches</h2>
-                            </div>
-                            <div class="content">
-                                <ul>
-                                    <li><a href="#">Car MOT</a></li>
-                                    <li><a href="#">Car repair</a></li>
-                                    <li><a href="#">Car parts</a></li>
-                                    <li><a href="#">Car servicing</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> 
-
-                </div>
-                <div class="footer-bottom clearfix">
-                    <div class="copy-right pull-left">
-                        <p>© 2016 All Rights Reserved</p>
-                    </div>
-                    <div class="pull-right">
-                        <ul class="clearfix">
-                           <li><a href="#" class="fa fa-facebook"></a></li>
-                           <li><a href="#" class="fa fa-twitter"></a></li>
-                           <li><a href="#" class="fa fa-instagram"></a></li>
-                           <li><a href="#" class="fa fa-linkedin"></a></li>
-                       </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   
                         
-</div>
+
 <!--End pagewrapper-->
 
     <!--Scroll to top-->
