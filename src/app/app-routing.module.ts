@@ -1,3 +1,4 @@
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { ProductResolver } from './product/product.resolver';
 import { ProductComponent } from './product/product.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -10,6 +11,7 @@ import { SettingsComponent } from './settings/settings.component';
 
 
 const routes: Routes = [
+  {path:'wlc', component:WelcomePageComponent},
   {path:'home', component:HomeComponent,
 children: [
   {path: 'product', component:ProductComponent,

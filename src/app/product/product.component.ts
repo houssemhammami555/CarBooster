@@ -5,7 +5,8 @@ import { Product } from '../shared/product';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProductService } from './product.service';
 import { ActivatedRoute } from '@angular/router';
-declare var $:any;
+
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -88,8 +89,6 @@ export class ProductComponent implements OnInit {
       )
   }
 
-  popUp(){
-   $('.ui.modal').modal('show');
-}
+
 
 }
