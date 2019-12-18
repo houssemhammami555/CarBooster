@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CarComponent } from './car/car.component';
 import { LoginComponent } from './login/login.component';
 import { SettingsComponent } from './settings/settings.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,7 @@ children: [
   
   },
   outlet:'contentOutlet'
-},
+},{path:'wlc', component:WelcomePageComponent,outlet:'contentOutlet'},
 {path:'car', component:CarComponent,outlet:'contentOutlet'},
 { path:'dashboard', component: DashboardComponent ,
 outlet:'contentOutlet'},
