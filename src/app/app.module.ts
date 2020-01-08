@@ -26,6 +26,7 @@ import { XhrInterceptor } from './xhr.interceptor';
 import { UserComponent } from './user/user.component';
 import { principalReducer } from './shared/principal.reducer';
 import { ContactComponent } from './contact/contact.component';
+import { MyChart2Component } from './my-chart2/my-chart2.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ContactComponent } from './contact/contact.component';
     SettingsComponent,
     WelcomePageComponent,
     UserComponent,
-    ContactComponent
+    ContactComponent,
+    MyChart2Component
   ],
   imports: [
     BrowserModule,

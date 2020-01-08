@@ -1,14 +1,22 @@
 <div class="row">
-  <div class="col-md-5">
 
-<app-my-chart  [data]="dataProdParPrice">
-</app-my-chart>
-
+<div class="col-lg-5">
+  <app-my-chart
+  [type]="'line'"
+  [title]="'Produits per price'"
+  [data]="dataProdParPrice"
+  ></app-my-chart>
 </div>
 <div class="col-md-5 offset-md-2">
 
-<app-my-chart  [data]="dataProdParQuant">
-</app-my-chart>
 
+<app-my-chart
+[type]="'bar'"
+[title]="'Produits per price'"
+[data]="dataProdParQuant"
+></app-my-chart>
 </div>
+</div>
+<div class="row">
+<app-my-chart2></app-my-chart2>
 </div>
