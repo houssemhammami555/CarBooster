@@ -55,7 +55,8 @@ This file contains the common styles of this theme.
 @import url(http://world5.commonsupport.com/html/total-car/assets/hover.css);
 @import url(http://world5.commonsupport.com/html/total-car/assets/fancyapps-fancyBox/source/jquery.fancybox.css);
 @import url(http://world5.commonsupport.com/html/total-car/assets/jquery.bxslider/jquery.bxslider.css);
-@import url(http://world5.commonsupport.com/html/total-car/assets/flaticon/flaticon.css);
+/*@import url(http://world5.commonsupport.com/html/total-car/assets/flaticon/flaticon.css);*/
+@import url(./flaticon.css);
 @import url(http://world5.commonsupport.com/html/total-car/css/style.css);
 
 

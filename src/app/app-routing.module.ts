@@ -1,3 +1,4 @@
+import { ContactComponent } from './contact/contact.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { ProductResolver } from './product/product.resolver';
 import { ProductComponent } from './product/product.component';
@@ -11,7 +12,7 @@ import { SettingsComponent } from './settings/settings.component';
 
 
 const routes: Routes = [
-  {path:'wlc', component:WelcomePageComponent},
+
   {path:'home', component:HomeComponent,
 children: [
   {path: 'product', component:ProductComponent,
@@ -20,16 +21,20 @@ children: [
   
   },
   outlet:'contentOutlet'
-},
+},  {path:'wlc', component:WelcomePageComponent,
+  outlet:'contentOutlet'},
 {path:'car', component:CarComponent,outlet:'contentOutlet'},
 { path:'dashboard', component: DashboardComponent ,
-outlet:'contentOutlet'},
+outlet:'contentOutlet'},{
+  path:'contact',component:ContactComponent,
+  outlet:'contentOutlet'
+},
 { path:'settings', component:SettingsComponent,
 outlet:'contentOutlet'}
 ]},
   
   {path:'login' , component:LoginComponent},
-  {path :'', redirectTo:'/home', pathMatch:'full'}
+  {path :'', redirectTo:'/home/(contentOutlet:wlc)', pathMatch:'full'}
 ];
 
 @NgModule({

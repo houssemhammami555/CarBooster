@@ -1,7 +1,7 @@
 <header class="header header-vone">
   <div class="container">
       <div class="logo pull-left">
-          <a href="index.html"><img src="http://world5.commonsupport.com/html/total-car/images/logo.png" alt="Awesome Image"/></a>
+          <a href="index.html"><img src="../../assets/images/carlogo.png" alt="Awesome Image"/></a>
       </div>
       <div class="top-infos pull-right">
           <ul class="list-inline">
@@ -47,39 +47,30 @@
               <div class="navbar-collapse collapse text-center">  
                   <ul>
                       <li >
-                          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active"  >Home</a>
+                          <a class="nav-link" [routerLink]="[{outlets:{contentOutlet:'wlc'}}]"routerLinkActive="router-link-active"  >Home</a>
                          
                       </li>
-                      <li class="dropdown">
-                          <a href="about.html">About</a>
-                          <ul class="submenu">
-                              <li><a href="team-member.html">Team</a> </li>
-                          </ul>
+                      <li >
+                          <a  class="nav-link" [routerLink]="[{outlets:{contentOutlet:'contact'}}]">Contat Us</a>
+                          
                       </li>
-                      <li class="dropdown">
-                          <a href="service-1.html">Services</a>
-                          <ul class="submenu">
-                              <li><a href="service-1.html">service one</a></li>
-                              <li><a href="service-2.html">service two</a></li>
-                              <li><a href="conditioning.html">Air Conditioning</a></li>
-                       
-                          </ul>
+                      <li >
+                          <a class="nav-link" [routerLink]="[{outlets:{contentOutlet:'dashboard'}}]">Statics</a>
+                          
                       </li>
-                      <li class="dropdown">
-                          <a href="gallery-masonary.html">Gallery</a>
-                          <ul class="submenu">
-                              <li><a href="gallery-masonary.html">gallery Masonary</a></li>
-                              <li><a href="gallery-3-col.html">gallery 3 Col</a></li>
-                      
-                          </ul>
-                      </li>
+                     
                       
                       
                       <li>
                           <a  class="nav-link" [routerLink]="[{outlets:{contentOutlet:'car'}}]" routerLinkActive="router-link-active" >My Car</a>
                       </li>
                       <li>   <a  class="nav-link"  [routerLink]="[{outlets:{contentOutlet:'product'}}]" routerLinkActive="router-link-active"  >Product</a></li>
-                  </ul> 
+                  
+                      <li *ngIf="!iflogin()" >
+                        <button class="btn btn-outline-primary btn-sm" (click)="logout()">Log Out</button>
+                      </li>
+ 
+                    </ul> 
               </div> 
           </div>
       </nav> <!-- /.mainmenu-area -->

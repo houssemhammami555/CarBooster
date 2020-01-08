@@ -14,7 +14,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ProductComponent implements OnInit {
 
-  list:string[] =["cles","oil","moteur"];
+  list:string[] =["Keys","Oil","Engine","Weels",];
   products:Product[];
   ProductForm: FormGroup;
   operation:String='add';
@@ -58,6 +58,15 @@ export class ProductComponent implements OnInit {
 
 
     const prod = this.ProductForm.value;
+    if(prod.quantity==null){
+      prod.quantity=0;
+    }
+    if(prod.price==null){
+      prod.price=0;
+    }
+    if(prod.descrip==null){
+      prod.descrip="No description for this product for now!";
+    }
     this.ProductService.addProduct(prod).subscribe(
       res=>{
         this.initProduct();
@@ -67,6 +76,10 @@ export class ProductComponent implements OnInit {
     );
     console.log(prod);
   }
+   initProduct(){
+    this.selectedProd= new Product();
+    this.creatForm()
+  }
   updateProduct(){
     this.ProductService.updateProdcut(this.selectedProd).subscribe(
       res => {
@@ -75,10 +88,7 @@ export class ProductComponent implements OnInit {
       }
     );
   }
-  initProduct(){
-    this.selectedProd= new Product();
-    this.creatForm()
-  }
+ 
   deleteProduct(){
 
       this.ProductService.deleteProduct(this.selectedProd.id).subscribe(

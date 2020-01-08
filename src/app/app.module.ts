@@ -23,6 +23,9 @@ import { MyChartComponent } from './my-chart/my-chart.component';
 import { SettingsComponent } from './settings/settings.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component'; 
 import { XhrInterceptor } from './xhr.interceptor';
+import { UserComponent } from './user/user.component';
+import { principalReducer } from './shared/principal.reducer';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,9 @@ import { XhrInterceptor } from './xhr.interceptor';
     LoginComponent,
     MyChartComponent,
     SettingsComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    UserComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,8 @@ import { XhrInterceptor } from './xhr.interceptor';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ChartModule
+    ChartModule,
+    StoreModule.forRoot({principal: principalReducer})
   ],
   providers: [ ProductService,
       CarService,

@@ -17,7 +17,7 @@ export class CarService{
         return this.http.get(API_URLS.CARS_URLS);
     }
     addCar(car:Car):Observable<any>{
-        return this.http.post(API_URLS.CARS_URLS,car);
+        return this.http.post(API_URLS.CARS_URLS, car);
     }
     updateCar(car:Car):Observable<any>{
         return this.http.put(API_URLS.CARS_URLS, car);
