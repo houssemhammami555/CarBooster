@@ -1,0 +1,337 @@
+@charset "utf-8";
+/*------------------------------------------------------------------
+[Common Stylesheet]
+@Author: ThemeMascot
+-------------------------------------------------------------------*/
+/*
+This file contains the common styles of this theme.
+*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+	* 1.0 -> Common
+		* 1.1 ->  font
+		* 1.2 ->  css
+		* 1.3 ->  basic css
+		* 1.4 ->  Font Size
+		* 1.5 ->  Letter Spacing
+		* 1.5 ->  Line Height
+		* 1.5 ->  Custom Margin Padding
+		* 1.6 ->  Border
+		* 1.7 ->  List
+		* 1.8 ->  Pagination
+		* 1.9 ->  Social Icons
+		* 1.10 -> Section & Divider
+		* 1.11 -> Solid Color Background
+		* 1.12 -> Pattern Background
+		* 1.13 -> Background Image
+		* 1.14 -> Absolute Image Positioning
+		* 1.15 -> Background Video
+		* 1.16 -> Header Nav
+		* 1.17 -> Navbar Fixed Top
+		* 1.18 -> Box Table
+		* 1.19 -> Scroll To Top
+		* 1.20 -> Form
+
+* ===============================================
+*/
+/*
+ * 1.1 -> Basic Structure
+ * -----------------------------------------------
+*//*
+@import url(https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Crete+Round:400,400italic);*/
+
+@import url(http://world5.commonsupport.com/html/total-car/assets/bootstrap/css/bootstrap.min.css);
+@import url(../../../node_modules/font-awesome/css/font-awesome.min.css);
+@import url(http://world5.commonsupport.com/html/total-car/assets/revolution/css/settings.css);
+@import url(http://world5.commonsupport.com/html/total-car/assets/revolution/css/layers.css);
+@import url(http://world5.commonsupport.com/html/total-car/assets/revolution/css/navigation.css);
+@import url(http://world5.commonsupport.com/html/total-car/assets/jquery-ui-1.11.4/jquery-ui.css);
+@import url(http://world5.commonsupport.com/html/total-car/assets/owl.carousel-2/assets/owl.carousel.css);
+@import url(http://world5.commonsupport.com/html/total-car/assets/owl.carousel-2/assets/owl.theme.default.min.css);
+@import url(http://world5.commonsupport.com/html/total-car/assets/animate.css);
+@import url(http://world5.commonsupport.com/html/total-car/assets/hover.css);
+@import url(http://world5.commonsupport.com/html/total-car/assets/fancyapps-fancyBox/source/jquery.fancybox.css);
+@import url(http://world5.commonsupport.com/html/total-car/assets/jquery.bxslider/jquery.bxslider.css);
+/*@import url(http://world5.commonsupport.com/html/total-car/assets/flaticon/flaticon.css);*/
+@import url(./flaticon.css);
+@import url(http://world5.commonsupport.com/html/total-car/css/style.css);
+
+
+@font-face {
+    font-family: 'HelveticaCB';
+    src: url(http://world5.commonsupport.com/html/total-car//assets//fonts/Helvetica/helvetica-neue-condensed-black.ttf);
+}
+
+
+
+
+
+
+
+
+
+/*** 
+
+====================================================================
+	Reset
+====================================================================
+
+ ***/
+
+
+* {
+	margin:0px;
+	padding:0px;
+	border:none;
+	outline:none;
+}
+
+/*** 
+
+====================================================================
+	Global Settings
+====================================================================
+
+ ***/
+
+body {
+	font-size:16px;
+	color:#292929;
+	font-weight:400;
+	background:#ffffff;
+}
+
+.auto-container {
+    position: static;
+    max-width: 1200px;
+    padding: 0px 15px;
+    margin: 0 auto;
+}
+
+a{
+	text-decoration:none;
+	cursor:pointer;	
+}
+
+a:hover,a:focus,a:visited{
+	text-decoration:none;
+	outline:none;
+}
+
+h1,h2,h3,h4,h6 {
+	position:relative;
+	font-family: 'HelveticaCB';
+	margin:0px;
+	background:none;
+}
+
+h5 {
+	position:relative;
+	font-family: 'Crete Round', serif;
+	font-weight:normal;
+	margin:0px;
+	background:none;
+}
+
+input,button,select,textarea{
+	font-family: 'Karla', sans-serif;	
+}
+
+
+p{
+	position:relative;
+	font-family: 'Karla', sans-serif;
+	font-weight: 400;
+	margin: 0px;
+		
+}
+
+
+
+.page-wrapper{
+	position:relative;
+	margin:0 auto;
+	width:100%;
+	min-width:300px;
+	min-height:400px;
+	overflow:hidden;
+	
+}
+.section-padding {padding: 80px 0;}
+
+ul,li{
+	list-style:none;
+	padding:0px;
+	margin:0px;	
+}
+
+
+.center{
+	text-align:center;	
+}
+
+.left{
+	text-align:left;	
+}
+
+.right{
+	text-align:right;	
+}
+
+.out{
+	opacity:0;
+	filter:alpha(opacity=0);	
+}
+
+.in{
+	opacity:1;
+	filter:alpha(opacity=100);	
+}
+
+.uppercase{
+	text-transform:uppercase !important;	
+}
+
+.capitalized{
+	text-transform:capitalize !important;	
+}
+
+.lowercase{
+	text-transform:lowercase !important;	
+}
+
+.no-margin{
+	margin:0px !important;	
+}
+
+.no-float{
+	float:none !important;	
+}
+
+
+.no-padd {
+	padding: 0px !important;	
+}
+
+
+.preloader{ position:fixed; left:0px; top:0px; width:100%; height:100%; z-index:999999; background-color:#ffffff; background-position:center center; background-repeat:no-repeat; background-image:url(http://world5.commonsupport.com/html/total-car/images/icons/preloader.GIF);}
+
+
+
+
+
+
+
+.span-4 {
+	width: 33.3333333333% !important;
+	float: left;
+}
+
+.span-6 {
+	width: 50% !important;
+	float: left;
+}
+
+.width-1 {
+	width: 33.33333333333% !important;
+}
+.width-2 {
+	width: 50% !important;
+	float: left;
+}
+
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before, [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+    margin-left: 0px;
+}
+
+.bg-p {
+	background-position: center center !important;
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+}
+
+.pb-15 {
+	padding-bottom: 15px !important;
+}
+.pt-99 {
+	padding-top: 99px !important;
+}
+.pt-100 {
+	padding-top: 100px !important;
+}
+
+.mb-6 {
+	margin-bottom: 6px !important;
+}
+
+
+
+
+
+
+/*========== section title ================ */
+.section-title {
+    position: relative;
+    padding: 93px 0 68px; 
+    text-align: center;
+}
+
+.section-title h2 {
+    position: relative;
+    font-size: 36px;
+    font-family: 'HelveticaCB';
+    color: #000;  
+    text-transform: uppercase;
+    margin-bottom: 26px;
+    letter-spacing: 2px;
+}
+
+.section-title h5 {
+    position: relative;
+    font-size: 14px;
+    font-family: 'Crete Round', serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #999999;
+}
+
+
+
+
+/*======= page title ================*/
+.page-title .sec-title {
+	position: relative;
+	overflow: hidden;
+	z-index: 55;
+	
+}
+
+.page-title .sec-title h2 {
+    position: relative;
+	font-size: 36px;
+    color: #fff;  
+    text-transform: uppercase;
+    background: #df4a43;
+    padding-left: 62px;
+    line-height: 120px;
+    left: 85px;
+    width: 50%;
+	float: right;
+	letter-spacing: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

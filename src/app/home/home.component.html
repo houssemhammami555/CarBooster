@@ -1,18 +1,18 @@
-<div class="container-fluid">
-  <div class="row body">
-      <div class="col-lg-2" *ngIf="showHideSideBar">
-          <app-sidebar></app-sidebar>
-      </div>
+
   
+
+ 	
+
+   
+    <app-navbar></app-navbar>
+  <app-content></app-content>  
   
-  <div class="class col-lg-10">
-      
-   <app-navbar [showSideBar]="showHideSideBar"
-   (showSideBarChange)="onshowSideBarChange($event)"
-   ></app-navbar>
-  <app-content></app-content>   
-  </div>
-  </div>
-  </div>
-  
+
+
+
+
+
+
+
+   
   

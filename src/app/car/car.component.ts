@@ -20,6 +20,7 @@ export class CarComponent implements OnInit {
 
   ngOnInit() {
     this.loadCars();
+    this.initCar();
   }
 
   CreatForm(){
@@ -28,7 +29,7 @@ export class CarComponent implements OnInit {
       userCin:'',
       state:'',
       price:'',
-      model:'',
+      model:['',Validators.required],
       details:''
 
     });
@@ -40,8 +41,32 @@ export class CarComponent implements OnInit {
       ()=>{console.log(this.cars)}
     );
   }
-
-
+  opera(){
+    this.operation='add';
+  }
+    addCar(){
+      const car = this.CarForm.value;
+      car.state=false;
+      this.CarService.addCar(car).subscribe(
+        res=>{
+          this.initCar();
+          this.loadCars();
+          console.log(car);
+        }
+      )
+    }
+    updateCar(){
+      this.CarService.updateCar(this.selectedCar).subscribe(
+        res=>{
+          this.initCar();
+          this.loadCars();
+        }
+      )
+    }
+initCar(){
+  this.selectedCar = new Car();
+  this.CreatForm()
+}
   deleteCar(){
 
     this.CarService.deleteCar(this.selectedCar.id).subscribe(
@@ -51,5 +76,7 @@ export class CarComponent implements OnInit {
       }
     )
 }
+
+
 
 }

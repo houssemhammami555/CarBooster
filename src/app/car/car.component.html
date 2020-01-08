@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row ca">
 <div class="col-lg-8">
   <div class="row">
    <div class="ui link cards col-lg-4"  *ngFor="let car of cars" >
@@ -44,7 +44,7 @@
           
         <div class="content">
           <div class="header">
-             Ref : {{car.mat}}
+             Matricule : {{car.mat}}
             </div>
             <div class="title">
              Car Model:  {{car.model}}
@@ -87,7 +87,9 @@
        </div>
      </div>
  </div>
+
  <div class="col-lg-3 offset-lg-1">
+    <button class="btn btn-success" (click)="opera()"><i class="fa fa-plus"></i> </button>
     <div class="card">
     
         <div class="card-header bg-info text-white">
@@ -105,16 +107,16 @@
                   <input type="text" name="mat" class="form-control" formControlName="mat"  [(ngModel)]="selectedCar.mat" >
                 
                 </div>
-                <div class="alert alert-danger" *ngIf="ProductForm.controls['mat'].invalid &&
-                 (ProductForm.controls['mat'].touched || ProductForm.controls['mat'].dirty)" > 
+             <div class="alert alert-danger" *ngIf="CarForm.controls['mat'].invalid &&
+                 (CarForm.controls['mat'].touched || CarForm.controls['mat'].dirty)" > 
                 You must enter the Matricule of the car !
                 </div>
                 <div class="form-group">
                     <label> Car Model </label>
                     <input type="text" name="model" class="form-control" formControlName="model"  [(ngModel)]="selectedCar.model" >
                   </div>
-                  <div class="alert alert-danger" *ngIf="ProductForm.controls['model'].invalid &&
-                 (ProductForm.controls['model'].touched || ProductForm.controls['model'].dirty)" > 
+               <div class="alert alert-danger" *ngIf="CarForm.controls['model'].invalid &&
+                 (CarForm.controls['model'].touched || CarForm.controls['model'].dirty)" > 
                 You must enter the model of the car !
                 </div>
   
@@ -126,19 +128,20 @@
                
                 <div class="form-group">
                   <label> Price </label>
-                  <input type="number"  step="any" name="price" class="form-control" min="0" formControlName="price" [(ngModel)]="selectedProd.price">
+                  <input type="number"  step="any" name="price" class="form-control" min="0" formControlName="price" [(ngModel)]="selectedCar.price">
                 </div>
              
                 <div class="form-group">
                   <label> Some Details </label>
-                  <textarea type="text" class="form-control" name="descrip" formControlName="descrip" [(ngModel)]="selectedProd.descrip">
+                  <textarea type="text" class="form-control" name="details" formControlName="details" [(ngModel)]="selectedCar.details">
                   </textarea> 
                 </div>
-                <button class="btn btn-success" [disabled]="ProductForm.prestine || ProductForm.invalid"
-                (click)="operation == 'add' ? addProduct() : updateProduct()">
-                
-                {{operation == 'add' ? 'Add Prodcut' : operation == 'edit' ? 'Edit Prodcut': ''}}
-              </button>
+               
+              <button class="btn btn-success" [disabled]="CarForm.prestine || CarForm.invalid"
+              (click)="operation == 'add' ? addCar() : updateCar()">
+              
+              {{operation == 'add' ? 'Add Car' : operation == 'edit' ? 'Edit Car': ''}}
+            </button>
             </form>
           </div>
       
