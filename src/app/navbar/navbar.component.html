@@ -51,23 +51,23 @@
                          
                       </li>
                       <li >
-                          <a  class="nav-link" [routerLink]="[{outlets:{contentOutlet:'contact'}}]">Contat Us</a>
+                          <a  class="nav-link" [routerLink]="[{outlets:{contentOutlet:'contact'}}]" routerLinkActive="router-link-active">Contat Us</a>
                           
                       </li>
                       <li >
-                          <a class="nav-link" [routerLink]="[{outlets:{contentOutlet:'dashboard'}}]">Statics</a>
+                          <a class="nav-link" [routerLink]="[{outlets:{contentOutlet:'dashboard'}}]" routerLinkActive="router-link-active">Statics</a>
                           
                       </li>
                      
                       
                       
                       <li>
-                          <a  class="nav-link" [routerLink]="[{outlets:{contentOutlet:'car'}}]" routerLinkActive="router-link-active" >My Car</a>
+                          <a  class="nav-link" [routerLink]="[{outlets:{contentOutlet:'car'}}]" routerLinkActive="router-link-active" >Cars</a>
                       </li>
                       <li>   <a  class="nav-link"  [routerLink]="[{outlets:{contentOutlet:'product'}}]" routerLinkActive="router-link-active"  >Product</a></li>
                   
                       <li *ngIf="!iflogin()" >
-                        <button class="btn btn-outline-primary btn-sm" (click)="logout()">Log Out</button>
+                        <a [routerLink]="['//login']"   (click)="logout()">Log Out</a>
                       </li>
  
                     </ul> 

@@ -1,28 +1,20 @@
-<div class="row container">
-  <div class="col-lg-5">
-    <form [formGroup]="loginForm" (submit)="login()">
-      <div class="container">
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username"  id="username" name="username" formControlName="username" [(ngModel)]="credentials.username">
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" id="password" name="password" formControlName="password" [(ngModel)]="credentials.password">
+<div class="container login" > 
+  <div class="row">
+    <div class="col-lg-4 offset-lg-4">
+<form [formGroup]="loginForm" (submit)="login()">
 
-        <button type="submit">Login</button>
-        <label>
-          <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
-      </div>
-
-      <div class="container" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <span class="psw">Forgot <a href="#">password?</a></span>
-      </div>
-    </form>
+  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  <label for="username" class="sr-only">User Name</label>
+  <input type="text" id="username" class="form-control" placeholder="User  Name" required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
   </div>
-  <div class="col-lg-7">
-    <div class="imgcontainer">
-      <img src="https://www.7boutik.com/images/cache/IMAGE_STOCK.500.jpg" alt="Avatar" class="avatar">
-    </div>
-  </div>
-</div>
+  <button class="btn btn-lg btn-primary btn-block" id="b" type="submit">Sign in</button>
+ 
+</form>
+</div></div></div>

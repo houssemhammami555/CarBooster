@@ -1,3 +1,5 @@
+import { Car } from './../shared/car';
+import { CarService } from './../car/car.service';
 
 import { ProductService } from './../product/product.service';
 import { Component, OnInit } from '@angular/core';
@@ -17,7 +19,13 @@ export class DashboardComponent implements OnInit {
       labels:   [],
       datasets:[]
     };
-  constructor(private prodService:ProductService) { }
+    private   carZ ={
+      labels:[],
+      datasets:[]
+    }
+    fixedCar:Car[];
+    nonFixedCar:Car[];
+  constructor(private prodService:ProductService, private carService:CarService) { }
 
   ngOnInit() {
  
@@ -30,6 +38,11 @@ export class DashboardComponent implements OnInit {
       label: "Quantity",
       data: []
     };
+
+    const datasetsCarfixd={
+      label:"State",
+      data: []
+    }
    this.prodService.getProducts().subscribe(list=> list.forEach(product =>{
     console.log(product.ref);
     console.log(product.price);
@@ -43,7 +56,15 @@ export class DashboardComponent implements OnInit {
    this.dataProdParQuant.datasets.push(datasetsStock);
    this.dataProdParPrice.datasets.push(datasetsPrice);
 
+  this.carService.getCars().subscribe(list=>list.forEach(car=>{
+    if(car.state==true){
+      this.fixedCar.push(car);
+    }else{
+      this.nonFixedCar.push(car);
+    }
   
+  }));
+  console.log(this.fixedCar+'aaand non fixed '+this.nonFixedCar);
   }
   
 }

@@ -14,6 +14,7 @@ export class CarComponent implements OnInit {
    CarForm: FormGroup;
    operation:String='add';
    selectedCar:Car; 
+ 
   constructor(private CarService:CarService,private fb:FormBuilder) {
     this.CreatForm();
    }
@@ -21,6 +22,8 @@ export class CarComponent implements OnInit {
   ngOnInit() {
     this.loadCars();
     this.initCar();
+
+
   }
 
   CreatForm(){
@@ -46,7 +49,7 @@ export class CarComponent implements OnInit {
   }
     addCar(){
       const car = this.CarForm.value;
-      car.state=false;
+
       this.CarService.addCar(car).subscribe(
         res=>{
           this.initCar();

@@ -92,7 +92,7 @@
     <button class="btn btn-success" (click)="opera()"><i class="fa fa-plus"></i> </button>
     <div class="card">
     
-        <div class="card-header bg-info text-white">
+        <div class="card-header mainmenu-wrapper stricky menu-dark text-white">
             {{operation == 'add' ? 'Add Car' :
               operation == 'edit' ? 'Edit Car':
               operation == 'remove' ? 'Delete Car':'' }}
@@ -125,12 +125,32 @@
                   <label> User Cin  </label>
                   <input type="number" name="userCin" class="form-control" formControlName="userCin" min="0" [(ngModel)]="selectedCar.userCin">
                 </div>
-               
+                <div class="alert alert-danger" *ngIf="CarForm.controls['userCin'].invalid &&
+                (CarForm.controls['userCin'].touched || CarForm.controls['userCin'].dirty)" > 
+               You must enter the model of the car !
+               </div>
                 <div class="form-group">
                   <label> Price </label>
                   <input type="number"  step="any" name="price" class="form-control" min="0" formControlName="price" [(ngModel)]="selectedCar.price">
                 </div>
              
+                <div class="form-group">
+                  <label> Car state </label>
+                  <select [(ngModel)]="selectedCar.state" name="state" class="form-control" formControlName="state">
+     
+              <option value="true"  >Fixed</option>
+         
+            <option value="false" selected >Not Fixed</option>
+       
+                  
+
+          </select>
+        
+        </div>
+
+
+
+
                 <div class="form-group">
                   <label> Some Details </label>
                   <textarea type="text" class="form-control" name="details" formControlName="details" [(ngModel)]="selectedCar.details">

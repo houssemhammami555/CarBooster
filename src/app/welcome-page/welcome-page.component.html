@@ -41,7 +41,7 @@
                     data-transform_out="opacity:0;s:300;s:300;" 
                     data-start="1800" 
                     data-responsive_offset="on">
-                    <a href="#" class="slider-btn">Contact Now</a>
+                    <a [routerLink]="[{outlets:{contentOutlet:'contact'}}]"  class="slider-btn nav-link">Contact Now</a>
                 </div>
             </li>
             <li class="slide-2" data-transition="fade">
@@ -84,7 +84,7 @@
                     data-transform_out="opacity:0;s:300;s:300;" 
                     data-start="1800" 
                     data-responsive_offset="on">
-                    <a href="#" class="slider-btn clrd">Contact Now</a>
+                    <a  class="nav-link" [routerLink]="[{outlets:{contentOutlet:'contact'}}]"  class="slider-btn clrd nav-link">Contact Now</a>
                 </div>
             </li>
             <li data-transition="fade">
@@ -127,7 +127,7 @@
                     data-transform_out="opacity:0;s:300;s:300;" 
                     data-start="1800" 
                     data-responsive_offset="on">
-                    <a href="#" class="slider-btn">Contact Now</a>
+                    <a   [routerLink]="[{outlets:{contentOutlet:'contact'}}]"  class="slider-btn nav-link">Contact Now</a>
                 </div>
             </li>
         </ul>

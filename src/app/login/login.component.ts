@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.appService.authenticate(this.credentials, ()=>{
-      this.router.navigate(['/home']);
+      this.router.navigate([{ outlets: { wlc: null }}]);
     });
   }
 

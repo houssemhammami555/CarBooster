@@ -115,7 +115,14 @@ a{
 	text-decoration:none;
 	cursor:pointer;	
 }
-
+.log{
+	text-decoration:none;
+	cursor:pointer;	
+}
+.log:hover,.log:focus{
+	text-decoration:none;
+	outline:none;
+}
 a:hover,a:focus,a:visited{
 	text-decoration:none;
 	outline:none;
