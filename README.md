@@ -1,4 +1,5 @@
-# CarBooster
+# CarBooster Client (angular)
+# go to the sprint boot part (API) : https://github.com/houssemhammami555/CarBoosterApi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
